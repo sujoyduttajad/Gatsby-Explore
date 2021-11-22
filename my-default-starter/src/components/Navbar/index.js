@@ -6,6 +6,19 @@ const Navbar = () => {
     const [click, setClick] = useState(false);
     const [scroll, setScroll] = useState(false);
 
+    const changeNav = () => {
+        if(window.scrollY >= 80) {
+            setScroll(true)
+        } else {
+            setScroll(false)
+        }
+    }
+
+    useEffect(() => {
+        changeNav();
+        window.addEventListener("scroll", changeNav)
+    }, [])
+
     return (
         <React.Fragment>
             <IconContext.Provider value={{ color: "#141414"}}>
