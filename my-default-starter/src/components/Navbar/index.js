@@ -22,7 +22,14 @@ const Navbar = () => {
     return (
         <React.Fragment>
             <IconContext.Provider value={{ color: "#141414"}}>
-                <Nav active={scroll} click={click}></Nav>
+                <Nav active={scroll} click={click}>
+                    <NavbarContainer>
+                        <NavLogo to='/'>
+                            <NavIcon/>
+                            EXPLORE
+                        </NavLogo>
+                    </NavbarContainer>
+                </Nav>
             </IconContext.Provider>
         </React.Fragment>
     )
